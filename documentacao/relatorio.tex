@@ -1,0 +1,65 @@
+\documentclass[
+    a4paper,    % Página do tipo a4
+    12pt,       % Fonte padrão 12pt
+    oneside     % Imprimir de apenas um lado da folha
+]{article}
+
+\input{package}   % Chamando arquivos de pacotes
+
+\usepackage{graphicx}
+\usepackage{float} % Para fixar a posição da figura
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                  dados da universidade               %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\universidade{Universidade do Vale do Rio Dos Sinos}
+\universidadesigla{UNISINOS}
+\universidadecentro{Escola Politécnica}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                  seus da instituição                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Deixe vazio "sp" e "subtitulo" se não houver subtitulo
+
+\nome{Klaus Pereira Becker\\Gabriel Silveira Marques}
+\disciplina{Eletrônica Analógica}
+\titulo{Projeto de Regulador de Tensão Linear}\sp{:}  
+\subtitulo{Implementação de um regulador série realimentado de 3 a 15 V e 1 A}
+\professor{Prof. Rubem Dreger}
+\curso{Engenharia da Computação}
+\local{São Leopoldo / RS}
+\ano{2024}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                        conteúdos                     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\conteudos{     % Coloque os seus novos arquivos aqui.
+    \newcont{01-introducao.tex}
+    \newcont{02-objetivos.tex}
+    \newcont{03-metodologia.tex}
+    \newcont{04-resultados.tex}
+    \newcont{05-conclusoes.tex}
+
+    \bibliography{referencias.bib}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                        anexos                        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                  começo do documento                 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \imprimircapa
+    \imprimircontracapa         % Imprimi a conta capa
+    \imprimirsumario
+    \imprimirconteudos          % Imprimi os conteúdos
+    
+    \imprimiranexos             % Imprimi os anexos
+    
+\end{document}

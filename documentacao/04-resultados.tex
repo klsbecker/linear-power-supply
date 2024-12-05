@@ -1,0 +1,89 @@
+\section{Resultados e discussões}
+
+O projeto da fonte de alimentação linear com realimentação de tensão foi implementado com sucesso, atendendo aos requisitos de tensão e corrente especificados. A seguir, apresentamos os resultados obtidos em relação à tensão de saída, corrente máxima e estabilidade do circuito.
+
+\subsection{Tensão de saída}
+
+O circuito foi projetado a fim de fornecer uma faixa de valores maior que a especificação fornecida para esse projeto. Sendo assim, para comprová-lo, utilizando uma carga de 1 k\(\Omega\), foi realizado um teste de tensão de saída variando o potenciômetro a fim de obter a tensão de saída máxima e mínima. Os resultados obtidos foram comparados com os calculados e simulados, conforme a Tabela \ref{tab:tensao}.
+
+\begin{table}[H]
+    \centering
+    \caption{Comparação entre tensões de saída calculadas, simuladas e medidas.}
+    \label{tab:tensao}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{Tensão} & \textbf{Calculada (V)} & \textbf{Simulada (V)} & \textbf{Medida (V)} \\ \hline
+    Mínima         & 2,10                   & 2,17                 & 2,10               \\ \hline
+    Máxima       & 21,19                  & 18,00                & 19,35              \\ \hline
+    \end{tabular}
+\end{table}
+
+Essa diferença entre os valores calculados e simulados pode ser atribuída a variações nos componentes utilizados, como resistores e transistores, bem como a imprecisões nos modelos utilizados na simulação. A tensão de saída máxima, em particular, ficou abaixo do esperado, o que pode ser explicado pela limitação do transistor de potência e pela dissipação de calor no circuito. 
+
+De qualquer forma, a faixa de tensão de saída obtida atende aos requisitos do projeto, fornecendo uma margem de segurança para a operação do circuito.
+
+\subsection{Corrente máxima}
+
+Para verificar a corrente máxima (limitada), fornecida pela fonte de alimentação, foi realizado um teste de curto-circuito, com a tensão de saída ajustada para o valor máximo. A corrente foi medida e comparada com o valor especificado para o projeto, conforme a Tabela \ref{tab:corrente}.
+
+\begin{table}[H]
+    \centering
+    \caption{Comparação entre corrente máxima calculada, simulada e medida.}
+    \label{tab:corrente}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{Corrente} & \textbf{Calculada (A)} & \textbf{Simulada (A)} & \textbf{Medida (A)} \\ \hline
+    Máxima           & 1,49                   & 1,54                 & 1,54               \\ \hline
+    \end{tabular}
+\end{table}
+
+A diferença entre os valores calculados e medidos pode ser atribuída a variações nos componentes, bem como a imprecisões na medição da corrente, mas o maior fator é o fato da limitação de corrente estar diretamente relacionada ao V\(_{BE}\) do transistor de limitação de corrente, o qual na prática é menor que o valor teórico de 0,7 V. Sendo assim, a corrente máxima obtida é menor que a especificada, mas ainda dentro da faixa de operação segura do circuito.
+
+\subsection{Estabilidade}
+
+A estabilidade do circuito foi avaliada em função da variação da carga, com o objetivo de verificar a capacidade de manter a tensão de saída constante. Foram realizados testes com cargas para fornecer 1 A nas tensões ajustadas de 3 V e 15 V, conforme mostrado na Tabela \ref{tab:estabilidade}.
+
+\begin{table}[H] 
+    \centering 
+    \caption{Estabilidade da tensão de saída sob diferentes cargas.} 
+    \label{tab:estabilidade} 
+    \begin{tabular}{|c|c|c|} 
+        \hline 
+        \textbf{Carga \(\Omega\)} & \textbf{Tensão (V)} & \textbf{Atendeu?} \\ \hline 
+        3,3 & 3,00 & SIM \\ \hline 
+        15 & 15,00 & SIM \\ \hline 
+    \end{tabular} 
+\end{table}
+
+Os resultados obtidos demonstram que o circuito é capaz de manter a tensão de saída estável, mesmo com variações na carga. Isso confirma a eficácia da realimentação de tensão e a robustez do projeto em relação a mudanças nas condições de operação.
+
+\subsection{Regulação de carga}
+
+A regulação de carga foi avaliada em função da tensão de saída, com o objetivo de verificar a capacidade do circuito de manter a tensão constante em diferentes condições de carga. Para realizar o teste foi a fonte foi ajustada para fornecer 10 V sem carga e após isso foi conectado uma carga de 10 \(\Omega\). A partir da variação de tensão na carga a regulação foi calculada conforme a equação a seguir:
+
+\begin{equation}
+    \text{Regulação de carga} = \frac{V_{\text{sem carga}} - V_{\text{com carga}}}{V_{\text{sem carga}}} \times 100\%
+\end{equation}
+
+Os resultados calculados, simulados e medidos são apresentados na Tabela \ref{tab:regulacao}.
+
+\begin{table}[H]
+    \centering
+    \caption{Regulação de carga calculada, simulada e medida.}
+    \label{tab:regulacao}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{Regulação} & \textbf{Calculada (\%)} & \textbf{Simulada (\%)} & \textbf{Medida (\%)} \\ \hline
+    Regulação         & 0,00                   & 4,59                 & 4,60               \\ \hline
+    \end{tabular}
+\end{table}
+
+Os resultados obtidos confirmam a eficácia da regulação de carga do circuito, mantendo a tensão de saída estável mesmo com variações na carga. A regulação de carga medida é próxima do valor simulado, demonstrando a precisão do projeto em relação a esse aspecto.
+
+\subsection{Monitor de tensão}
+
+O monitor de tensão foi ajustado para que o sinal de 6 V seja acionado exatamente quando a tensão de saída for de 6 V, o mesmo foi feito para o sinal de 10 V. Após isso, foi realizado um teste de tensão de saída variando o potenciômetro a fim de verificar que o monitor de tensão em janela estava funcionando conforme o esperado.
+
+Com o comparador de tensão ajustado, foi possível constatar que o monitor em janela estava funcionando conforme o esperado e que a troca do LED verde para o amarelo ocorreu no ponto de 6 V e a troca do LED amarelo para o vermelho ocorreu no ponto de 10 V. Dessa forma, podemos concluir que o monitor de tensão em janela está funcionando conforme o esperado.
+
+

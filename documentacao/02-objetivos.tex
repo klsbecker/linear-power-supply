@@ -1,0 +1,23 @@
+\section{Fundamentação Teórica}  
+
+O desenvolvimento de fontes de alimentação lineares exige o entendimento aprofundado de diversos componentes eletrônicos e seus papéis no circuito. Nesta seção, abordamos os conceitos teóricos que embasam o projeto, destacando os principais elementos utilizados e suas aplicações práticas:  
+
+\subsection{Resistor}  
+Os resistores são componentes passivos que limitam e controlam o fluxo de corrente elétrica. Em fontes de alimentação, são amplamente utilizados para polarização de transistores, divisão de tensão e proteção de circuitos contra sobrecorrentes. A resistência, medida em ohms (\(\Omega\)), determina a relação entre a tensão aplicada e a corrente que atravessa o componente, conforme a Lei de Ohm (\(V = R \cdot I\)).  
+
+\subsection{Diodo}  
+Diodos são dispositivos semicondutores com junção PN, que permitem a passagem de corrente em apenas uma direção, bloqueando o fluxo inverso. Em fontes lineares, eles desempenham funções como a retificação de sinais AC para DC, proteção contra polaridades invertidas e estabilização de circuitos. A tensão direta típica de um diodo de silício é de 0,7 V, enquanto diodos de germânio apresentam valores menores, em torno de 0,3 V.  
+
+\subsection{Diodo Zener}  
+Diodos Zener são projetados para operar em sua região de ruptura reversa, onde mantêm uma tensão constante em seus terminais, independentemente da corrente aplicada, dentro de certos limites. Eles são essenciais em reguladores de tensão, proporcionando estabilidade e proteção contra picos de tensão. Sua tensão de ruptura é uma característica definida durante a fabricação e varia de acordo com a aplicação.  
+
+\subsection{Transistor Bipolar de Junção (TBJ)}  
+Os transistores bipolares de junção (TBJs) são dispositivos semicondutores compostos por três camadas de material dopado, formando uma estrutura NPN ou PNP. Eles atuam como amplificadores de sinal ou chaves eletrônicas em circuitos de potência. A corrente que flui entre os terminais do emissor e coletor é controlada pela corrente aplicada à base, sendo esta relação caracterizada pelo ganho de corrente (\(\beta\)).  
+
+\subsection{Fonte de Corrente Constante}  
+Fontes de corrente constante garantem uma corrente fixa e estável, independentemente das variações na carga conectada. Em circuitos de fontes lineares, são usadas para polarização de transistores, controle de corrente em LEDs e proteção de circuitos sensíveis. A implementação pode incluir combinações de transistores, diodos e resistores, com base nos requisitos de precisão e estabilidade.  
+
+\subsection{Proteção Contra Curto-Circuito}  
+A proteção contra curto-circuito é essencial para garantir a segurança dos usuários e a integridade dos componentes da fonte. Esta proteção pode ser realizada com fusíveis, circuitos de limitação de corrente ou transistores que atuam como interruptores automáticos. Em fontes lineares, circuitos de proteção são projetados para detectar excessos de corrente e agir imediatamente, protegendo tanto o circuito quanto os dispositivos conectados.  
+
+Os conceitos abordados são essenciais para o desenvolvimento de fontes de alimentação lineares reguladas, garantindo estabilidade, segurança e desempenho adequado. Na seção seguinte, detalharemos como esses elementos foram aplicados no projeto de uma fonte linear ajustável, capaz de fornecer tensões de saída entre 3 e 15 V e correntes de até 1 A.  
